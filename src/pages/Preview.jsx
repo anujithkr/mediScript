@@ -1,13 +1,17 @@
-// Preview.jsx
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Preview() {
   const { state: data } = useLocation();
+  const navigate = useNavigate();
 
   const handlePrint = () => {
     window.print();
     alert("🖨️ Printed successfully!");
+  };
+
+  const handleNewPrescription = () => {
+    navigate('/script');
   };
 
   if (!data) return <p className="text-center mt-10 text-red-500">❌ No data received</p>;
@@ -33,12 +37,19 @@ function Preview() {
           </div>
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex justify-center gap-4 flex-wrap">
           <button
             onClick={handlePrint}
             className="bg-violet-700 hover:bg-violet-800 text-white font-semibold px-6 py-2 rounded-full"
           >
             🖨️ Print
+          </button>
+
+          <button
+            onClick={handleNewPrescription}
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-full"
+          >
+            ➕ New Prescription
           </button>
         </div>
       </div>
