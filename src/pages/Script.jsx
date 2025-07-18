@@ -69,8 +69,8 @@ export default function Script() {
   return (
     <div className="min-h-screen bg-violet-50 flex items-center justify-center px-4">
       <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-xl">
-        <h2 className="text-2xl font-semibold text-violet-700 mb-6 text-center">
-          Patient Details Form
+        <h2 className="text-3xl font-bold text-violet-700 mb-6 text-center">
+          Prescription Form
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
           <Field name="name" label="👤 Patient Name" type="text" value={formData.name} onChange={handleChange} required />

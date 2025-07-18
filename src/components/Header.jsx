@@ -4,10 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 function Header() {
   const navigate = useNavigate();
 
-  const isLoggedIn = !!localStorage.getItem('token'); // ✅ Check token
+  const isLoggedIn = !!localStorage.getItem('token'); // Check token
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); // ✅ Remove token
+    localStorage.removeItem('token'); //  Remove token
     navigate('/'); // Or reload: window.location.reload();
   };
 

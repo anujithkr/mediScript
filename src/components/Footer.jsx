@@ -5,7 +5,7 @@ function Footer() {
     <>
     <footer className="bg-violet-700 text-white text-center py-8">
       <p className="text-sm">
-        © {new Date().getFullYear()} MediCraft. All rights reserved.
+        © {new Date().getFullYear()} MediScript. All rights reserved.
       </p>
     </footer>
 
