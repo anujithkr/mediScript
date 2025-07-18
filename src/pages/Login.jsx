@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
@@ -23,6 +22,10 @@ function Login() {
     try {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, formData);
       console.log(res.data);
+
+      // ✅ Store token in localStorage (update key if your backend sends a different one)
+      localStorage.setItem('token', res.data.token);
+
       alert("Login successful!");
       navigate('/Script'); // Redirect after login
     } catch (error) {
@@ -69,7 +72,7 @@ function Login() {
           </button>
 
           <p className="text-center text-sm text-gray-600 mt-4">
-            Don&apos;t have an account?{" "}
+            Don&apos;t have an account?{' '}
             <Link to="/register" className="text-violet-700 hover:underline font-medium">
               Register here
             </Link>
